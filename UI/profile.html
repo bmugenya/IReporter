@@ -2,13 +2,16 @@
 <html>
 <head>
     <title>IReporter</title>
+     <link rel="shortcut icon" href="img/flag.png" />
     <link rel="stylesheet" href="layout/layout.css">
 </head>
 <body>
     <article id="height">
 
     <nav>
+
         <ul>
+
             <li><a href="index.html">Home</a></li>
             <li><a href="profile.html#all">Profile</a></li>
             <li><a href="admin.html#all">admin</a></li>
@@ -19,9 +22,21 @@
     </nav>
 
     <article class="container">
+
         <article class="navigation">
 
         <ul>
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html#all">Profile</a></li>
+            <li><a href="admin.html#all">admin</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Sign Up</a></li>
+        </ul>
+
+    </nav>
+    <a href="#menu"><img class="menu" src="img/menu.png" alt="menu icon"/></a>
+        <ul id="menu">
 
             <li><a href="#raise">Raise</a></li>
             <li><a href="#delete">Delete</a></li>
@@ -48,7 +63,7 @@
                     <input type = "text" name = "point" placeholder="Location" required/><br />
                     <textarea cols="40" rows="8" name="Comments" style="width:100%;background:#B3B6B7;margin:8px 0;"> Please describe the incident... </textarea>
 
-                    <input type ="submit" value="send"/>
+                    <button class="green">Submit</button>>
                 </form>
 
             </article>
@@ -67,7 +82,7 @@
                     </select>
                     <textarea cols="40" rows="8" name="Comments" style="width:100%;background:#B3B6B7;margin:8px 0;">Please provide a brief reason </textarea>
 
-                    <input type ="submit" value="send" style="background-color:red;"/>
+                    <button class="red">Delete</button>
                 </form>
 
             </article>
@@ -111,7 +126,6 @@
 
 
 
-    <article class="space-30" style="clear:both"></article>
     <footer>
         <article>
             <img src="img/call.png">
