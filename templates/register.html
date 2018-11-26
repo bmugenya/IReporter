@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href=" {{ url_for('static', filename='css.css', _external=True) }} " media="screen">
+      <link rel="icon" href="{{ url_for('static', filename = 'img/flag.png') }}">
+    <title>IReporter</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('admin') }}">admin</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+        </ul>
+
+    </nav>
+
+
+        <section>
+            <article class="space-100"></article>
+
+            <article class="container">
+                <article class="space-30"></article>
+                    <article class="wrapper">
+
+                        <form action="{{ url_for('profile') }}" method ="post"/>
+                            <input type = "text" name = "f_name" placeholder="First Name" required/><br />
+                            <input type = "text" name = "l_name" placeholder="Last Name" required/><br />
+                            <input type = "email" name = "email" placeholder="Email" required/><br />
+                            <input type = "password" name = "password" placeholder="Password" required/><br />
+
+                            <input type="submit" value="Submit"/>
+                            <input type ="reset" value="reset"/>
+                        </form>
+
+                        <article class="space-30"></article>
+                        <span>Already have an account?<a href ="{{ url_for('login') }}"> Log in</a></span>
+                        <article class="space-30"></article>
+
+                    </article>
+            </article>
+        </section>
+
+    <article class="space-30" style="clear:both"></article>
+    <footer>
+        <article>
+            <img src="{{ url_for('static', filename='img/call.png') }}">
+            <p>Reach us Via Hotline <span>07000000</span></p>
+        </article>
+    </footer>
+</article>
+
+</body>
+</html>
+
+    </body>
+</html>

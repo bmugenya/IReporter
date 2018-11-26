@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IReporter</title>
+        <link rel="stylesheet" href=" {{ url_for('static', filename='layout.css', _external=True) }} " media="screen">
+        <link rel="icon" href="{{ url_for('static', filename = 'img/flag.png') }}">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            <li><a href="{{ url_for('admin') }}">admin</a></li>
+
+            {% if users == [] %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+
+            {% else %}
+                <li><a href="#">Logout</a></li>
+                {% for val in users %}
+                    {{ val }}
+
+                {% endfor %}
+
+            {% endif %}
+          </ul>
+      </nav>
+
+
+
+    <article class="container">
+        <article class="navigation">
+
+        <ul>
+
+            <li><a href="#raise">Flags</a></li>
+            <li><a href="#delete">Intervension</a></li>
+            <li><a href="#all">All</a></li>
+        </ul>
+
+
+
+    </article>
+    <article class="space-30"></article>
+
+
+
+
+    <article id="raise">
+        <article class="admin-container">
+
+                      <table border = 1>
+
+                        <tr>
+                          <th>Title</th>
+                          <th>Description</th>
+                          <th>Location</th>
+                          <th>Date</th>
+                          <th>Status</th>
+                       </tr>
+
+                        <tr>
+                            <td>
+                              {% if title != [] %}
+
+                                {{ title }}
+
+
+
+                              {% else %}
+
+                                title 1
+
+                              {% endif %}
+                            </td>
+
+                            <td>
+                                {% if comment != [] %}
+                                {{ comment }}
+
+
+
+                                {% else %}
+                                Description
+
+
+
+                                {% endif %}
+                              </td>
+
+                              <td>
+
+                                {% if location != [] %}
+                                {{ location }}
+
+
+
+                                {% else %}
+
+
+                                  Description
+
+                                {% endif %}
+                              </td>
+
+                              <td>
+                                {% if posted == [] %}
+
+                                Date 1
+
+                                {% else %}
+
+
+
+                                  {{ posted }}
+
+                                {% endif %}
+                        </td>
+                               <td>
+                                <button class="yellow">Approve</button>
+                                <button class="green">Solved</button>
+                                <button class="red">Reject</button>
+                            </td>
+
+
+                        </table>
+
+
+            </article>
+        </article>
+    </article>
+
+
+    <article id="delete">
+        <article class="admin-container">
+            <article class="wrapper">
+
+                      <table border = 1>
+
+                        <tr>
+                          <th>Title</th>
+                          <th>Description</th>
+                          <th>Location</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                       </tr>
+
+
+                        <tr>
+                            <td>
+
+
+                              {% if title == [] %}
+
+                                title 1
+
+                              {% else %}
+
+                                {{ title }}
+
+                              {% endif %}
+                            </td>
+
+                            <td>
+                              {% if comment == [] %}
+
+                                Description
+
+                                {% else %}
+
+                                  {{ comment }}
+
+                              {% endif %}
+                            </td>
+
+                          <td>
+                            {% if location == [] %}
+
+                              Description
+
+                            {% else %}
+
+                              {{ location }}
+
+                            {% endif %}
+                          </td>
+
+                          <td>
+                            {% if posted == [] %}
+
+                              Date 1
+
+                            {% else %}
+
+                              {{ posted }}
+
+                            {% endif %}
+                          </td>
+
+                          <td>
+                              <button class="yellow">Approve</button>
+                              <button class="green">Solved</button>
+                              <button class="red">Reject</button>
+                          </td>
+
+                        </table>
+
+
+
+            </article>
+        </article>
+    </article>
+    <article id="all">
+        <article class="flag-container">
+            <article class="wrapper">
+             <h1>Here are all the reported incidents</h1>
+            </article>
+        </article>
+    </article>
+
+    <footer>
+        <article>
+            <img src="{{ url_for('static', filename='img/call.png') }}">
+            <p>Reach us Via Hotline <span>07000000</span></p>
+        </article>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+/*     Layout                         */
+
+body {
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+    line-height: 1.6;
+    background: #F2F2F2;
+}
+
+nav {
+    height:20%;
+    width:100%;
+    background:#76B852;
+
+}
+
+
+header {
+    height:30%;
+    width:100%;
+    clear:both;
+
+}
+
+section {
+    height:70%;
+    width:100%;
+    clear:both;
+}
+
+
+aside {
+    heigh:70%;
+    width:30%;
+    float:right;
+
+}
+
+footer {
+    clear:both;
+    width:100%;
+    height:10%;
+    background:#76B852;
+    padding: 10px 0px;
+    color: rgba(255, 255, 255, 0.8);
+
+}
+
+/*  Navigation  */
+
+ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+
+}
+
+nav li {
+    display: inline-block;
+}
+
+
+
+/*            IMAGE             */
+
+header img {
+    height:100%;
+    width:100%;
+}
+
+
+header .blow {
+    heigh:26px;
+    width:50px;
+    float:right;
+}
+
+aside img {
+    width:46px;
+    height:46px;
+    float:left;
+}
+
+footer img {
+    width:36px;
+    height:36px;
+    float:left;
+}
+
+/*  CONTAINER */
+
+section .content {
+    width:70%;
+    float:left;
+
+}
+
+.center {
+    width:80%;
+    margin:0 auto;
+}
+
+aside article {
+    clear:both;
+    width:80%;
+    margin:0 auto;
+
+}
+
+footer article {
+    width:50%;
+    margin:0 auto;
+
+}
+
+.container {
+    height:70%;
+    width:100%;
+}
+
+.flag-container {
+    width:40%;
+    margin:0 auto;
+    background:#F2F2F2;
+
+}
+
+.wrapper {
+    width:60%;
+    margin:0 auto;
+
+}
+
+.navigation {
+    height:520px;
+    width: 120px;
+    float:left;
+    background:#76B852;
+
+}
+
+#raise,#delete,#resolved,#pending,#rejected,#all,#flag {
+  display: none;
+}
+
+
+#raise:target,#delete:target,#resolved:target,#pending:target,#rejected:target,#all:target,#flag,#inter {
+  display: block;
+}
+
+.admin-container {
+    width:80%;
+    margin:0 auto;
+    background:#F2F2F2;
+
+}
+
+
+
+/*  LINKS   */
+
+li a {
+    display:block;
+    color:white;
+    text-align: center;
+    padding:16px;
+    text-decoration: none;
+}
+
+
+aside a {
+  text-decoration: none;
+  float:left;
+}
+
+
+/*  TEXT  */
+
+h1 {
+    text-align: center;
+}
+
+
+aside h2 {
+    color:teal;
+}
+
+
+aside h3 {
+    margin:0;
+    padding:0;
+    color:red;
+
+}
+
+aside p {
+    clear:left;
+}
+
+
+/* Page spages*/
+
+.space-100 {
+    height:100px;
+
+}
+
+.space-30 {
+    height:30px;
+
+}
+
+/* Form decoration*/
+
+input[type=text] {
+    width:100%;
+    height:40px;
+    background:#B3B6B7;
+    margin:8px 0;
+
+}
+
+
+
+input[type=password] {
+    width:100%;
+    height:40px;
+    background:#B3B6B7;
+    margin:8px 0;
+
+}
+
+
+
+input[type=submit] {
+    width:49%;
+    height:40px;
+    background:#4CAF50;
+    padding:6px 10px;
+    margin:8px 0;
+
+}
+
+
+input[type=reset]{
+    width:49%;
+    height:40px;
+    background:#4CAF50;
+    padding:6px 10px;
+    margin:8px 0;
+
+}
+
+
+/*  TABLE */
+
+table {
+border-collapse: collapse;
+border: none;
+}
+
+th, td {
+padding: 5px 10px;
+text-align: center;
+white-space: nowrap;
+border-right: 1px solid #514F33;
+}
+
+tr:nth-child(odd) {
+   background: #009688;
+}
+
+/* Button   */
+button {
+  border: none;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  color:white;
+
+}
+
+.yellow {
+    background-color: #ffeb3b;
+
+}
+
+.green {
+    background-color:#4CAF50;
+}
+
+.red {
+    background-color:  #e51c23;
+}
