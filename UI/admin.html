@@ -1,229 +1,180 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IReporter</title>
-    <link rel="shortcut icon" href="img/flag.png" />
-    <link rel="stylesheet" href="layout/layout.css">
-
+  <title>IReporter</title>
+  <link rel="stylesheet" href="layout/layout.css" type="text/css">
 </head>
+
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="profile.html#all">Profile</a></li>
-            <li><a href="admin.html#all">admin</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Sign Up</a></li>
-        </ul>
-
-    </nav>
-
+  <nav>
     <article class="container">
-        <article class="navigation">
-
-        <ul>
-
-            <li><a href="#raise">Flags</a></li>
-            <li><a href="#delete">Intervension</a></li>
-            <li><a href="#all">All</a></li>
-
+      <ul>
+        <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html#all">Profile</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Sign Up</a></li>
         </ul>
+    </article>
+  </nav>
+
+  <article class="faux-column">
+    <article class="navigation">
+      <ul id="menu_nav">
+        <li><a href="#raise">Status</a></li>
+        <li><a href="#resolved">Resolved</a></li>
+        <li><a href="#pending">Pending</a></li>
+        <li><a href="#rejected">Rejected</a></li>
+        <li><a href="#all">All</a></li>
+      </ul>
+    </article>
+
+    <article class="space-50"></article>
+
+    <article class="content">
+      <article id="raise">
+        <article class="flag-container">
+          <article class="wrapper">
+            <h3>Approve or Reject a Flag</h3>
+            <table border = "1">
+                <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Location</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+
+                <tr>
+                  <td>Title 1</td>
+                  <td>Description 1</td>
+                  <td>Location 1</td>
+                  <td>Date 1</td>
+                  <td>
+                    <button class="yellow">Approve</button>
+                    <button class="green">Solved</button>
+                    <button class="red">Reject</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>Title 2</th>
+                  <th>Description 2</th>
+                  <th>Location 2</th>
+                  <th>Date 2</th>
+                  <th>Status 2</th>
+                </tr>
+
+                <tr>
+                  <td>Title 3</td>
+                  <td>Description 3</td>
+                  <td>Location 3</td>
+                  <td>Date 3</td>
+                  <td>
+                    <button class="yellow">Approve</button>
+                    <button class="green">Solved</button>
+                    <button class="red">Reject</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Title 4</td>
+                  <td>Description 4</td>
+                  <td>Location 4</td>
+                  <td>Date 4</td>
+                  <td>
+                    <button class="yellow">Approve</button>
+                    <button class="green">Solved</button>
+                    <button class="red">Reject</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Title 5</td>
+                  <td>Description 5</td>
+                  <td>Location 5</td>
+                  <td>Date 5</td>
+                  <td>
+                    <button class="yellow">Approve</button>
+                    <button class="green">Solved</button>
+                    <button class="red">Reject</button>
+                  </td>
+                </tr>
+              </table>
+            </article>
+        </article>
+      </article>
 
 
+      <article id="delete">
+        <article class="flag-container">
+          <article class="wrapper">
+            <form>
+              <select name="type" style="width:100%;height:40px;background:#B3B6B7;margin:8px 0;">
+              <option value="flag">Raise a flag</option>
+              <option value="intevension">Intevension</option>
+              </select>
+              <textarea cols="40" rows="8" name="Comments" style="width:100%;background:#B3B6B7;margin:8px 0;">Please provide a brief reason </textarea>
+              <button class="red">Delete</button>
+            </form>
+          </article>
+        </article>
+      </article>
 
+      <article id="resolved">
+        <article class="flag-container">
+            <article class="wrapper">
+             <h1>Here are all the resolved incidents</h1>
+            </article>
+        </article>
+      </article>
+
+      <article id="pending">
+        <article class="flag-container">
+          <article class="wrapper">
+            <h1>Here are all the pending incidents</h1>
+          </article>
+        </article>
+      </article>
+
+
+    <article id="rejected">
+      <article class="flag-container">
+        <article class="wrapper">
+          <h1>Here are all the rejected incidents</h1>
+        </article>
+      </article>
+    </article>
+
+    <article id="all">
+      <article class="flag-container">
+        <article class="wrapper">
+          <h1>Here are all the reported incidents</h1>
+        </article>
+      </article>
     </article>
   </article>
 
+  <button class="menu" onclick="show()">Menu</button>
+  </article>
 
-    <article id="raise">
-        <article class="admin-container">
-            <article class="wrapper">
-                      <table border = 1>
-
-                        <tr>
-                          <th>Title</th>
-                          <th>Description</th>
-                          <th>Location</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                       </tr>
-                               <tr>
-
-                               <td>Title 1</td>
-                               <td>Description 1</td>
-                               <td>Location 1</td>
-                               <td>Date 1</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-
-                               <tr>
-
-                               <td>Title 2</td>
-                               <td>Description 2</td>
-                               <td>Location 2</td>
-                               <td>Date 2</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-                               <tr>
-
-                               <td>Title 3</td>
-                               <td>Description 3</td>
-                               <td>Location 3</td>
-                               <td>Date 3</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-                               <tr>
-
-                               <td>Title 4</td>
-                               <td>Description 4</td>
-                               <td>Location 4</td>
-                               <td>Date 4</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-                               <tr>
-
-                               <td>Title 5</td>
-                               <td>Description 5</td>
-                               <td>Location 5</td>
-                               <td>Date 5</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-
-
-                        </table>
-
-            </article>
-        </article>
+  <footer>
+    <article class="container">
+      <img src="img/call.png">
+      <p>Reach us Via Hotline <span>07000000</span></p>
     </article>
+  </footer>
 
-
-    <article id="delete">
-        <article class="admin-container">
-            <article class="wrapper">
-                      <table border = 1>
-
-                        <tr>
-                          <th>Title</th>
-                          <th>Description</th>
-                          <th>Location</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                       </tr>
-                               <tr>
-
-                               <td>Title 1</td>
-                               <td>Description 1</td>
-                               <td>Location 1</td>
-                               <td>Date 1</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-
-                               <tr>
-
-                               <td>Title 2</td>
-                               <td>Description 2</td>
-                               <td>Location 2</td>
-                               <td>Date 2</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-                               <tr>
-
-                               <td>Title 3</td>
-                               <td>Description 3</td>
-                               <td>Location 3</td>
-                               <td>Date 3</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-                               <tr>
-
-                               <td>Title 4</td>
-                               <td>Description 4</td>
-                               <td>Location 4</td>
-                               <td>Date 4</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-                               <tr>
-
-                               <td>Title 5</td>
-                               <td>Description 5</td>
-                               <td>Location 5</td>
-                               <td>Date 5</td>
-                               <td>
-                              <button class="yellow">Approve</button>
-                              <button class="green">Solved</button>
-                              <button class="red">Reject</button>
-                            </td>
-
-                               </tr>
-
-
-                        </table>
-
-            </article>
-        </article>
-    </article>
-    <article id="all">
-        <article class="flag-container">
-            <article class="wrapper">
-             <h1>Here are all the reported incidents</h1>
-            </article>
-        </article>
-    </article>
-
-
-
-    <footer>
-        <article>
-            <img src="img/call.png">
-            <p>Reach us Via Hotline <span>07000000</span></p>
-        </article>
-    </footer>
-
+<script>
+    function show() {
+    var x = document.getElementById("menu_nav");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
+
+
