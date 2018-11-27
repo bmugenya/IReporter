@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IReporter</title>
-     <link rel="shortcut icon" href="img/flag.png" />
-    <link rel="stylesheet" href="layout/layout.css">
+    <title></title>
+    <link rel="stylesheet" href="layout2.css" type="text/css">
+
+
 </head>
 <body>
-    <nav>
-        <ul>
+
+<nav>
+    <article class="container">
+          <ul>
+
+
             <li><a href="index.html">Home</a></li>
             <li><a href="profile.html#all">Profile</a></li>
-            <li><a href="admin.html#all">admin</a></li>
+
             <li><a href="login.html">Login</a></li>
             <li><a href="register.html">Sign Up</a></li>
+            <button class="menu" onclick="myFunction()">Menu</button>
+
         </ul>
-    </nav>
+</article>
+</nav>
 
-    <article class="container">
 
-        <article class="navigation">
-    <a href="#menu"><img class="menu" src="img/menu.png" alt="menu icon"/></a>
-        <ul id="menu">
+<article class="faux-column">
+
+  <article class="navigation">
+
+        <ul id="menu_nav">
 
             <li><a href="#raise">Raise</a></li>
             <li><a href="#delete">Delete</a></li>
@@ -29,12 +38,11 @@
             <li><a href="#rejected">Rejected</a></li>
             <li><a href="#all">All</a></li>
         </ul>
-
-
-
     </article>
 
+    <article class="space-30"></article>
 
+    <article class="content">
     <article id="raise">
         <article class="flag-container">
             <article class="wrapper">
@@ -106,8 +114,8 @@
             </article>
         </article>
     </article>
-
-
+</article>
+</article>
 
 
     <footer>
@@ -118,37 +126,19 @@
     </footer>
 </article>
 
+
+
+<script>
+    function myFunction() {
+    var x = document.getElementById("menu_nav");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
