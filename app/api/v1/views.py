@@ -1,4 +1,4 @@
-from flask import request, jsonify, make_response
+from flask import request, jsonify, make_response, json
 from flask_restful import Resource, Api
 
 from models import FlagModel, reported_flags
@@ -19,14 +19,15 @@ class Flags(Resource, FlagModel):
         flags = self.db.save(title, flag_type, location, incident)
 
         return make_response(jsonify({
-            "Reported Flags": flags
-        }), 200)
+            "data": flags,
+            'message': 'Successfully created red flag'
+        }), 201)
 
     def get(self):
         flags = self.db.get()
 
         return make_response(jsonify({
-            "Reported Flags": flags
+            "data": flags
         }), 200)
 
 
