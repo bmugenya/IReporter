@@ -30,3 +30,9 @@ class FlagModel():
 
     def get(self):
         return self.db
+
+    def get_flag(self, post_id):
+        for post in self.db:
+            if post_id == post['Id']:
+                return post, 200
+        return "Post not found", 404

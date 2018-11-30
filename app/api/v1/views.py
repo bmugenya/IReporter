@@ -28,3 +28,16 @@ class Flags(Resource, FlagModel):
         return make_response(jsonify({
             "Reported Flags": flags
         }), 200)
+
+
+class SingleFlag(Resource, FlagModel):
+    """docstring for  MyRecords """
+
+    def __init__(self):
+        self.db = FlagModel()
+
+    def get(self, flag_id):
+        flag = self.db.get_flag(flag_id)
+        return make_response(jsonify({
+            "Reported Flags": flag
+        }), 200)
