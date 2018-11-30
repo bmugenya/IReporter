@@ -42,3 +42,9 @@ class FlagModel():
             if post["Id"] == flag_id:
                 post.update(data)
                 return post
+
+    def remove_data(self):
+        for redflag in reported_flags:
+            item = self.db
+            self.db.remove(item)
+            return self.db
