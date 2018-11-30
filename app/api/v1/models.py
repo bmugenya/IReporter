@@ -36,3 +36,9 @@ class FlagModel():
             if post_id == post['Id']:
                 return post, 200
         return "Post not found", 404
+
+    def update_flag(self, flag_id, data):
+        for post in self.db:
+            if post["Id"] == flag_id:
+                post.update(data)
+                return post

@@ -41,3 +41,18 @@ class SingleFlag(Resource, FlagModel):
         return make_response(jsonify({
             "Reported Flags": flag
         }), 200)
+
+
+class FlagUpdate(Resource, FlagModel):
+    """docstring for  MyRecords """
+
+    def __init__(self):
+        self.db = FlagModel()
+
+    def patch(self, flag_id):
+
+        updated = self.db.update_flag(flag_id, request.get_json())
+
+        return make_response(jsonify({
+            "Reported Flags": updated
+        }), 200)
