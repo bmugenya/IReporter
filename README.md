@@ -1,4 +1,5 @@
 # IReporter
+[![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=ch-test-endpoints-162346523)](https://travis-ci.com/bmugenya/IReporter)
 
 Corruption is a huge bane to Africa’s development. African countries must develop novel and
 localised solutions that will curb this menace, hence the birth of iReporter. iReporter enables
