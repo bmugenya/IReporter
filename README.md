@@ -1,5 +1,5 @@
 # [IReporter](https://bmugenya.github.io/IReporter/UI)
-[![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=ch-test-endpoints-162346523)](https://travis-ci.com/bmugenya/IReporter)
+[![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=ch-test-endpoints-162346523)](https://travis-ci.com/bmugenya/IReporter
 [![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=ch-test-endpoints-162346523)](https://coveralls.io/github/bmugenya/IReporter?branch=ch-test-endpoints-162346523)
 
 Corruption is a huge bane to Africa’s development. African countries must develop novel and
