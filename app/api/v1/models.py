@@ -46,5 +46,5 @@ class FlagModel():
     def remove_data(self, flag_id):
         for post in self.db:
             if post["Id"] == flag_id:
-                post.remove(data)
+                self.db.remove(post)
                 return self.db
