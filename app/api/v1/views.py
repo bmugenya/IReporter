@@ -21,3 +21,10 @@ class Flags(Resource, FlagModel):
         return make_response(jsonify({
             "Reported Flags": flags
         }), 200)
+
+    def get(self):
+        flags = self.db.get()
+
+        return make_response(jsonify({
+            "Reported Flags": flags
+        }), 200)

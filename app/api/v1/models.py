@@ -27,3 +27,6 @@ class FlagModel():
 
         self.db.append(flag)
         return self.db
+
+    def get(self):
+        return self.db
