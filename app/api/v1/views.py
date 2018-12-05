@@ -12,11 +12,10 @@ class Flags(Resource, FlagModel):
 
     def post(self):
         data = request.get_json()
-        title = data["title"]
-        flag_type = data["flag_type"]
+        flag_type = data["type"]
         location = data["location"]
-        incident = data["incident"]
-        flags = self.db.save(title, flag_type, location, incident)
+        incident = data["comments"]
+        flags = self.db.save(flag_type, location, incident)
 
         return make_response(jsonify({
             "data": flags,
@@ -71,11 +70,8 @@ class FlagRemove(Resource, FlagModel):
     def __init__(self):
         self.db = FlagModel()
 
-    def delete(self, flag_id=None):
-        for item in reported_flags:
-            if item['Id'] == flag_id:
-                resp = self.db.remove_data()
-
+    def delete(self, flag_id):
+        resp = self.db.remove_data(flag_id)
         return make_response(jsonify({
             "deleted": resp
         }), 200)
