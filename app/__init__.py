@@ -1,24 +1,12 @@
-from flask import Flask
-from flask_restful import Api, Resource
+from flask import Flask, Blueprint
 
 # local imports
-from .api.v1.views import Flags, SingleFlag, FlagUpdate, FlagRemove
 # from instance.config import app_config
+from .api.v1 import version_one as v1
 
 
-# def create_app(config_name):
 def create_app():
-           # app = Flask(__name__, instance_relative_config=True)
+
     app = Flask(__name__)
-    # app.config.from_object(app_config[config_name])
-    # app.config.from_pyfile('config.py')
-    api = Api(app)
-    api.add_resource(Flags, "/record")
-    api.add_resource(SingleFlag, "/record/<int:flag_id>")
-    api.add_resource(FlagUpdate, "/record/<int:flag_id>")
-    api.add_resource(FlagRemove, "/record/<int:flag_id>")
-
+    app.register_blueprint(v1)
     return app
-
-
-#  for proc file - web:gunicorn run:app

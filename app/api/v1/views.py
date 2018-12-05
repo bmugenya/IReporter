@@ -12,11 +12,10 @@ class Flags(Resource, FlagModel):
 
     def post(self):
         data = request.get_json()
-        title = data["title"]
-        flag_type = data["flag_type"]
+        flag_type = data["type"]
         location = data["location"]
-        incident = data["incident"]
-        flags = self.db.save(title, flag_type, location, incident)
+        incident = data["comments"]
+        flags = self.db.save(flag_type, location, incident)
 
         return make_response(jsonify({
             "data": flags,
