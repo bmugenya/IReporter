@@ -56,3 +56,25 @@ class FlagUpdate(Resource, FlagModel):
         return make_response(jsonify({
             "Reported Flags": updated
         }), 200)
+
+    def remove_data(self):
+        for redflag in reported_flags:
+            item = self.db
+            self.db.remove(item)
+            return self.db
+
+
+class FlagRemove(Resource, FlagModel):
+    """docstring for  MyRecords """
+
+    def __init__(self):
+        self.db = FlagModel()
+
+    def delete(self, flag_id=None):
+        for item in reported_flags:
+            if item['Id'] == flag_id:
+                resp = self.db.remove_data()
+
+        return make_response(jsonify({
+            "deleted": resp
+        }), 200)
