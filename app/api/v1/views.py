@@ -57,12 +57,6 @@ class FlagUpdate(Resource, FlagModel):
             "Reported Flags": updated
         }), 200)
 
-    def remove_data(self):
-        for redflag in reported_flags:
-            item = self.db
-            self.db.remove(item)
-            return self.db
-
 
 class FlagRemove(Resource, FlagModel):
     """docstring for  MyRecords """
