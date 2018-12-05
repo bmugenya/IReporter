@@ -13,10 +13,10 @@ general public. Users can also report on things that needs government interventi
 ### End points
 Method | Endpoint | Usage |
 | ---- | ---- | --------------- |
-|POST| `/api/v1/records` |  create a flag. |
-|GET| `api/v1/records` | get all flags.|
-|GET| `api/v1/records/<red-flags_id>` | get one flag. |
-|PATCH| `api/v1/red-flags/<red_flag_id>` | Update a single flag. |
-|DELETE| `api/v1/red-flags/<red_flag_id>` | Delete a single redflag. |
+|POST| `/api/v1/record` |  Create a flag. |
+|GET| `api/v1/record` | Get all flags.|
+|GET| `api/v1/record/<flags_id>` | Get one flag. |
+|PATCH| `api/v1/record/<flag_id>` | Update a single flag. |
+|DELETE| `api/v1/record/<flag_id>` | Delete a single redflag. |
 
 
