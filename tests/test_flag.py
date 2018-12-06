@@ -22,13 +22,31 @@ class BaseCase(unittest.TestCase):
 
         }
 
+        self.user = {
+            "id": "user_id",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "othernames": "othernames",
+            "email": "email",
+            "phoneNumber": "phoneNumbe",
+            "username": "username",
+            "registered": "time",
+            "isAdmin": "False"
+
+        }
+
     def tearDown(self):
         del self.data
+        del self.user
 
     def test_can_create_post(self):
         response = self.client.post('/api/v1/record', json=self.data, content_type='application/json')
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.get_json()['message'], 'Successfully created red flag')
+
+    def test_can_create_account(self):
+        response = self.client.post('/api/v1/user', json=self.user, content_type='application/json')
+        self.assertEqual(response.status_code, 201)
 
     def test_can_get_post(self):
         response = self.client.get('/api/v1/record/1')

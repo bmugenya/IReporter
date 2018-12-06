@@ -1,6 +1,7 @@
 from datetime import datetime
 
 reported_flags = []
+visit = []
 
 
 class FlagModel():
@@ -8,6 +9,7 @@ class FlagModel():
     def __init__(self):
 
         self.db = reported_flags
+        self.users = visit
 
     def save(self, flag_type, location, incident):
 
@@ -51,3 +53,24 @@ class FlagModel():
             if post["id"] == flag_id:
                 self.db.remove(post)
                 return self.db
+
+    def save_user(self, firstname, lastname, othernames, email, phoneNumber, username):
+
+        time = datetime.now()
+        user_id = len(self.db) + 1
+
+        user = {
+            "id": user_id,
+            "firstname": firstname,
+            "lastname": lastname,
+            "othernames": othernames,
+            "email": email,
+            "phoneNumber": phoneNumber,
+            "username": username,
+            "registered": time,
+            "isAdmin": False,
+
+        }
+
+        self.users.append(user)
+        return self.users
