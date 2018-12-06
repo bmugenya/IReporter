@@ -6,6 +6,7 @@ python:
 install:
   - pip install pytest-cov
   - pip install coveralls
+  - pip install python-coveralls
   - pip install flask
   - pip install flask_restful
 
