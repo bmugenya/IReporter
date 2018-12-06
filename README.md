@@ -14,9 +14,10 @@ general public. Users can also report on things that needs government interventi
 Method | Endpoint | Usage |
 | ---- | ---- | --------------- |
 |POST| `/api/v1/record` |  Create a flag. |
-|GET| `api/v1/record` | Get all flags.|
-|GET| `api/v1/record/<flag_id>` | Get one flag. |
-|PATCH| `api/v1/record/<flag_id>` | Update a single flag. |
-|DELETE| `api/v1/record/<flag_id>` | Delete a single flag. |
+|POST| `/api/v1/user` |  Create a user. |
+|GET| `/api/v1/record` | Get all flags.|
+|GET| `/api/v1/record/<flag_id>` | Get one flag. |
+|PATCH| `/api/v1/record/<flag_id>` | Update a single flag. |
+|DELETE| `/api/v1/record/<flag_id>` | Delete a single flag. |
 
 
