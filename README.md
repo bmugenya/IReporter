@@ -1,6 +1,6 @@
 # [IReporter](https://bmugenya.github.io/IReporter/UI)
 [![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=develope)](https://travis-ci.com/bmugenya/IReporter)
-https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develope(Coverage Status)!:https://coveralls.io/github/bmugenya/IReporter?branch=develope)
+[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develope)](https://coveralls.io/github/bmugenya/IReporter?branch=develope)
 
 
 Corruption is a huge bane to Africa’s development. African countries must develop novel and
