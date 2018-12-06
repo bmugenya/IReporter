@@ -17,6 +17,6 @@ Method | Endpoint | Usage |
 |GET| `api/v1/record` | Get all flags.|
 |GET| `api/v1/record/<flag_id>` | Get one flag. |
 |PATCH| `api/v1/record/<flag_id>` | Update a single flag. |
-|DELETE| `api/v1/record/<flag_id>` | Delete a single redflag. |
+|DELETE| `api/v1/record/<flag_id>` | Delete a single flag. |
 
 
