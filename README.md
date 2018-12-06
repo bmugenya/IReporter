@@ -1,6 +1,6 @@
 # [IReporter](https://bmugenya.github.io/IReporter/UI)
 [![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=develope)](https://travis-ci.com/bmugenya/IReporter)
-[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=ch-test-endpoints-162346523)](https://coveralls.io/github/bmugenya/IReporter?branch=ch-test-endpoints-162346523)
+[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develope)](https://coveralls.io/github/bmugenya/IReporter?branch=develope)
 
 
 Corruption is a huge bane to Africa’s development. African countries must develop novel and
@@ -17,6 +17,6 @@ Method | Endpoint | Usage |
 |GET| `api/v1/record` | Get all flags.|
 |GET| `api/v1/record/<flag_id>` | Get one flag. |
 |PATCH| `api/v1/record/<flag_id>` | Update a single flag. |
-|DELETE| `api/v1/record/<flag_id>` | Delete a single redflag. |
+|DELETE| `api/v1/record/<flag_id>` | Delete a single flag. |
 
 
