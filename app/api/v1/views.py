@@ -21,6 +21,13 @@ class Flags(Resource, FlagModel):
             'message': 'Successfully created red flag'
         }), 201)
 
+    def get(self):
+        flags = self.db.get()
+
+        return make_response(jsonify({
+            "data": flags
+        }), 200)
+
 
 class User(Resource, FlagModel):
     def __init__(self):

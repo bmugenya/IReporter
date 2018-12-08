@@ -28,6 +28,12 @@ class FlagModel():
 
         return post
 
+    def get(self):
+        curr = self.db.cursor()
+        curr.execute("SELECT * FROM Posts")
+        post = curr.fetchall()
+        return post
+
     def save_user(self, firstname, lastname, othernames, email, phoneNumber, username):
 
         user = {
