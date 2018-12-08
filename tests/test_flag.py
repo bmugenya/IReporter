@@ -48,6 +48,10 @@ class BaseCase(unittest.TestCase):
         response = self.client.post('/api/v1/auth/register', json=self.user, content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
+    def test_can_get_post(self):
+        response = self.client.get('/api/v1/record/1')
+        self.assertEqual(response.status_code, 200)
+
     def test_can_get_posts(self):
         response = self.client.get('/api/v1/record')
         self.assertEqual(response.status_code, 200)
