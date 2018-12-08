@@ -1,11 +1,12 @@
 import unittest
-from app import create_app
+from app import create_app, create_tables
 
 
 class BaseCase(unittest.TestCase):
 
     def setUp(self):
         self.app = create_app()
+        create_tables()
         self.client = self.app.test_client()
 
         self.data = {
