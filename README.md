@@ -23,7 +23,6 @@ Method | Endpoint | Usage |
 |DELETE| `/api/v1/record/<flag_id>` | Delete a single flag. |
 
 ## Installation
-============
 
 Clone the Github repository and use pip to install the dependencies
 1. `$ git clone https://github.com/bmugenya/IReporter.git`
