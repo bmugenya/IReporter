@@ -6,8 +6,9 @@ class BaseCase(unittest.TestCase):
 
     def setUp(self):
         self.app = create_app()
-        create_tables()
+        self.store = create_tables()
         self.client = self.app.test_client()
+        self.client = self.store.test_client()
 
         self.data = {
 
