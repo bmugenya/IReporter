@@ -41,5 +41,18 @@ def tables():
         comments  VARCHAR(250) NOT NULL
         );"""
 
-    queries = [db1]
+    db2 = """CREATE TABLE IF NOT EXISTS Users (
+        id SERIAL PRIMARY KEY,
+        firstname VARCHAR(25) NOT NULL,
+        lastname  VARCHAR(25) NOT NULL,
+        othernames VARCHAR(25),
+        email       VARCHAR(25)    NOT NULL,
+        phoneNumber  VARCHAR(50)    NOT NULL,
+        username   VARCHAR(25)   NOT NULL,
+        register  VARCHAR(25),
+        isAdmin   VARCHAR(25)
+
+        );"""
+
+    queries = [db1, db2]
     return queries

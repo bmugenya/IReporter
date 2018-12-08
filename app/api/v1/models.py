@@ -27,3 +27,26 @@ class FlagModel():
         self.db.commit()
 
         return post
+
+    def save_user(self, firstname, lastname, othernames, email, phoneNumber, username):
+
+        user = {
+
+            "firstname": firstname,
+            "lastname": lastname,
+            "othernames": othernames,
+            "email": email,
+            "phoneNumber": phoneNumber,
+            "username": username,
+            "isAdmin": False,
+
+        }
+
+        query = """INSERT INTO Users  (firstname, lastname,othernames,email,phoneNumber,username,isAdmin)
+                              VALUES(%(firstname)s, %(lastname)s, %(othernames)s,
+                              %(email)s, %(phoneNumber)s, %(username)s,%(isAdmin)s)"""
+        curr = self.db.cursor()
+        curr.execute(query, user)
+        self.db.commit()
+
+        return user

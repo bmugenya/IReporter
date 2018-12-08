@@ -20,3 +20,23 @@ class Flags(Resource, FlagModel):
             "data": flags,
             'message': 'Successfully created red flag'
         }), 201)
+
+
+class User(Resource, FlagModel):
+    def __init__(self):
+        self.user = FlagModel()
+
+    def post(self):
+        data = request.get_json()
+        firstname = data["firstname"]
+        lastname = data["lastname"]
+        othernames = data["othernames"]
+        email = data["email"]
+        phoneNumber = data["phoneNumber"]
+        username = data["username"]
+
+        users = self.user.save_user(firstname, lastname, othernames, email, phoneNumber, username)
+
+        return make_response(jsonify({
+            "User created": users
+        }), 201)
