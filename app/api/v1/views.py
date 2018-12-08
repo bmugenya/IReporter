@@ -29,6 +29,19 @@ class Flags(Resource, FlagModel):
         }), 200)
 
 
+class SingleFlag(Resource, FlagModel):
+    """docstring for  MyRecords """
+
+    def __init__(self):
+        self.db = FlagModel()
+
+    def get(self, flag_id):
+        flag = self.db.get_flag(flag_id)
+        return make_response(jsonify({
+            "Reported Flags": flag
+        }), 200)
+
+
 class User(Resource, FlagModel):
     def __init__(self):
         self.user = FlagModel()

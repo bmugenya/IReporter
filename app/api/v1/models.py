@@ -34,6 +34,13 @@ class FlagModel():
         post = curr.fetchall()
         return post
 
+    def get_flag(self, flag_id):
+        curr = self.db.cursor()
+        curr.execute("SELECT * FROM Posts WHERE id = (%s);", (flag_id,))
+
+        post = curr.fetchall()
+        return post
+
     def save_user(self, firstname, lastname, othernames, email, phoneNumber, username):
 
         user = {
