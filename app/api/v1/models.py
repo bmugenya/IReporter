@@ -77,3 +77,10 @@ class FlagModel():
         self.db.commit()
 
         return user
+
+    def remove_data(self, flag_id):
+        curr = self.db.cursor()
+        post = curr.execute("DELETE FROM posts WHERE id = (%s);", (flag_id,))
+        self.db.commit()
+
+        return post

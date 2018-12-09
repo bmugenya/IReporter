@@ -78,3 +78,16 @@ class User(Resource, FlagModel):
         return make_response(jsonify({
             "User created": users
         }), 201)
+
+
+class FlagRemove(Resource, FlagModel):
+    """docstring for  MyRecords """
+
+    def __init__(self):
+        self.db = FlagModel()
+
+    def delete(self, flag_id):
+        resp = self.db.remove_data(flag_id)
+        return make_response(jsonify({
+            "deleted": resp
+        }), 200)
