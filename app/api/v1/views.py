@@ -1,20 +1,21 @@
 from flask import request, jsonify, make_response, json
 from flask_restful import Resource, Api
 
-from models import FlagModel
+from incident import Incident
+from users import User
 
 
-class Flags(Resource, FlagModel):
+class Flags(Resource, Incident):
 
     def __init__(self):
-        self.db = FlagModel()
+        self.incident = Incident()
 
     def post(self):
         data = request.get_json()
-        incident = data["incident"]
+        post_type = data["post_type"]
         location = data["location"]
         comment = data["comment"]
-        flags = self.db.save(incident, location, comment)
+        flags = self.incident.save(post_type, location, comment)
 
         return make_response(jsonify({
             "data": flags,
@@ -22,47 +23,56 @@ class Flags(Resource, FlagModel):
         }), 201)
 
     def get(self):
-        flags = self.db.get()
+        flags = self.incident.get()
 
         return make_response(jsonify({
             "data": flags
         }), 200)
 
 
-class SingleFlag(Resource, FlagModel):
-    """docstring for  MyRecords """
+class SingleFlag(Resource, Incident):
 
     def __init__(self):
-        self.db = FlagModel()
+        self.incident = Incident()
 
     def get(self, flag_id):
-        flag = self.db.get_flag(flag_id)
+        flag = self.incident.get_flag(flag_id)
         return make_response(jsonify({
             "Reported Flags": flag
         }), 200)
 
 
-class FlagUpdate(Resource, FlagModel):
-    """docstring for  MyRecords """
+class FlagUpdate(Resource, Incident):
 
     def __init__(self):
-        self.db = FlagModel()
+        self.incident = Incident()
 
     def patch(self, flag_id):
         data = request.get_json()
-        incident = data["incident"]
+        post_type = data["post_type"]
         location = data["location"]
         comment = data["comment"]
-        updated = self.db.update_flag(flag_id, incident, location, comment)
+        updated = self.incident.update_flag(flag_id, post_type, location, comment)
 
         return make_response(jsonify({
             "Reported Flags": updated
         }), 200)
 
 
-class User(Resource, FlagModel):
+class FlagRemove(Resource, Incident):
     def __init__(self):
-        self.user = FlagModel()
+        self.incident = Incident()
+
+    def delete(self, flag_id):
+        resp = self.incident.remove_data(flag_id)
+        return make_response(jsonify({
+            "deleted": resp
+        }), 200)
+
+
+class Users(Resource, User):
+    def __init__(self):
+        self.user = User()
 
     def post(self):
         data = request.get_json()
@@ -72,22 +82,10 @@ class User(Resource, FlagModel):
         email = data["email"]
         phoneNumber = data["phoneNumber"]
         username = data["username"]
+        passwrd = data["password"]
 
-        users = self.user.save_user(firstname, lastname, othernames, email, phoneNumber, username)
+        users = self.user.save_user(firstname, lastname, othernames, email, phoneNumber, username, passwrd)
 
         return make_response(jsonify({
             "User created": users
         }), 201)
-
-
-class FlagRemove(Resource, FlagModel):
-    """docstring for  MyRecords """
-
-    def __init__(self):
-        self.db = FlagModel()
-
-    def delete(self, flag_id):
-        resp = self.db.remove_data(flag_id)
-        return make_response(jsonify({
-            "deleted": resp
-        }), 200)

@@ -33,7 +33,7 @@ def tables():
         id SERIAL PRIMARY KEY,
         createdOn timestamp with time zone DEFAULT ('now'::text)::date NOT NULL,
         createdBy    SERIAL,
-        incident       VARCHAR(25)    NOT NULL,
+        post_type       VARCHAR(25)    NOT NULL,
         location   VARCHAR(50)    NOT NULL,
         status   VARCHAR(25)   NOT NULL,
         photo    VARCHAR(25),
@@ -50,7 +50,8 @@ def tables():
         phoneNumber  VARCHAR(50)    NOT NULL,
         username   VARCHAR(25)   NOT NULL,
         register  VARCHAR(25),
-        isAdmin   VARCHAR(25)
+        isAdmin   VARCHAR(25),
+        password VARCHAR(255) NOT NULL
 
         );"""
 
