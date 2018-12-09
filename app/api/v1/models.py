@@ -41,6 +41,20 @@ class FlagModel():
         post = curr.fetchall()
         return post
 
+    def update_flag(self, flag_id, incident, location, comment):
+        curr = self.db.cursor()
+        post = {
+            "incident": incident,
+            "location": location,
+            "comment": comment
+
+        }
+        query = "UPDATE Posts SET incident= '%s',location= '%s', comments='%s' WHERE id = %s;" % (incident, location, comment, flag_id)
+        curr.execute(query, post)
+
+        self.db.commit()
+        return post
+
     def save_user(self, firstname, lastname, othernames, email, phoneNumber, username):
 
         user = {
