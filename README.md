@@ -35,6 +35,6 @@ Clone the Github repository and use pip to install the dependencies
 
 ## License
 
-IReporter is releaset under the [MIT License](https://github.com/bmugenya/IReporter/blob/develop/LICENSE).
+IReporter is released under the [MIT License](https://github.com/bmugenya/IReporter/blob/develop/LICENSE).
 
 
