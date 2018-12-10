@@ -1,7 +1,7 @@
 from ...db_con import init_db
 
 
-class Incident():
+class PostIncidents():
 
     def __init__(self):
         self.incident = init_db()
@@ -28,11 +28,22 @@ class Incident():
 
         return post
 
+
+class ViewIncidents():
+    def __init__(self):
+        self.incident = init_db()
+
     def get(self):
         curr = self.incident.cursor()
         curr.execute("SELECT * FROM Posts")
         post = curr.fetchall()
         return post
+
+
+class ViewIncident():
+
+    def __init__(self):
+        self.incident = init_db()
 
     def get_flag(self, flag_id):
         curr = self.incident.cursor()
@@ -41,19 +52,39 @@ class Incident():
         post = curr.fetchall()
         return post
 
-    def update_flag(self, flag_id, post_type, location, comment):
+
+class UpdateIncident():
+
+    def __init__(self):
+        self.incident = init_db()
+
+    def update_map(self, flag_id, location):
         curr = self.incident.cursor()
         post = {
-            "post_type": post_type,
             "location": location,
-            "comment": comment
-
         }
-        query = "UPDATE Posts SET post_type= '%s',location= '%s', comments='%s' WHERE id = %s;" % (post_type, location, comment, flag_id)
+        query = "UPDATE Posts SET location= '%s' WHERE id = %s;" % (location, flag_id)
         curr.execute(query, post)
 
         self.incident.commit()
         return post
+
+    def update_post(self, flag_id, comment):
+        curr = self.incident.cursor()
+        post = {
+            "comment": comment,
+        }
+        query = "UPDATE Posts SET comments= '%s' WHERE id = %s;" % (comment, flag_id)
+        curr.execute(query, post)
+
+        self.incident.commit()
+        return post
+
+
+class RemoveIncident():
+
+    def __init__(self):
+        self.incident = init_db()
 
     def remove_data(self, flag_id):
         curr = self.incident.cursor()

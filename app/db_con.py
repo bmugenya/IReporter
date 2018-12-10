@@ -29,19 +29,8 @@ def destroy_tables():
 
 
 def tables():
-    db1 = """CREATE TABLE IF NOT EXISTS Posts (
-        id SERIAL PRIMARY KEY,
-        createdOn timestamp with time zone DEFAULT ('now'::text)::date NOT NULL,
-        createdBy    SERIAL,
-        post_type       VARCHAR(25)    NOT NULL,
-        location   VARCHAR(50)    NOT NULL,
-        status   VARCHAR(25)   NOT NULL,
-        photo    VARCHAR(25),
-        video        VARCHAR(25),
-        comments  VARCHAR(250) NOT NULL
-        );"""
 
-    db2 = """CREATE TABLE IF NOT EXISTS Users (
+    db1 = """CREATE TABLE IF NOT EXISTS Users (
         id SERIAL PRIMARY KEY,
         firstname VARCHAR(25) NOT NULL,
         lastname  VARCHAR(25) NOT NULL,
@@ -53,6 +42,19 @@ def tables():
         isAdmin   VARCHAR(25),
         password VARCHAR(255) NOT NULL
 
+        );"""
+
+    db2 = """CREATE TABLE IF NOT EXISTS Posts (
+        post_id INTEGER,
+        createdOn timestamp with time zone DEFAULT ('now'::text)::date NOT NULL,
+        createdBy    SERIAL,
+        post_type       VARCHAR(25)    NOT NULL,
+        location   VARCHAR(50)    NOT NULL,
+        status   VARCHAR(25)   NOT NULL,
+        photo    VARCHAR(25),
+        video        VARCHAR(25),
+        comments  VARCHAR(250) NOT NULL,
+        FOREIGN KEY (post_id) REFERENCES Users (id)
         );"""
 
     queries = [db1, db2]
