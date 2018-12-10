@@ -47,7 +47,7 @@ class ViewIncident():
 
     def get_flag(self, flag_id):
         curr = self.incident.cursor()
-        curr.execute("SELECT * FROM Posts WHERE id = (%s);", (flag_id,))
+        curr.execute("SELECT * FROM Posts WHERE id = (%s);" % (flag_id,))
 
         post = curr.fetchall()
         return post

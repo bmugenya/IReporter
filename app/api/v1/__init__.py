@@ -1,4 +1,5 @@
-from views import *
+from IncidentViews import *
+from UserViews import *
 
 from flask_restful import Api, Resource
 from flask import Blueprint
