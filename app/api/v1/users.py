@@ -102,6 +102,7 @@ class UserLogin(object):
 
         curr = self.user.cursor()
         query = "SELECT * FROM Users WHERE email = '%s' AND password = '%s';" % (email, password)
+
         curr = self.user.cursor()
         curr.execute(query, users)
         user = curr.fetchall()

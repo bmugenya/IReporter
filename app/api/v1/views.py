@@ -1,6 +1,7 @@
 from flask import request, jsonify, make_response
 from flask_restful import Resource
 
+
 from incident import *
 from users import *
 
@@ -154,11 +155,17 @@ class AdminAcces(Resource, AdminLogin):
         data = request.get_json()
         email = data["email"]
         password = data["password"]
-        users = self.user.login(email, password)
+        admin = self.user.login(email, password)
+        entered = bool(admin)
 
-        return make_response(jsonify({
-            "Welcome": users
-        }), 201)
+        if entered:
+
+            return make_response(jsonify({
+                "Welcome": admin
+
+            }), 200)
+
+        return make_response('Could not verify!', 401)
 
 
 class UserAcces(Resource, UserLogin):
@@ -170,7 +177,13 @@ class UserAcces(Resource, UserLogin):
         email = data["email"]
         password = data["password"]
         users = self.user.login(email, password)
+        entered = bool(users)
 
-        return make_response(jsonify({
-            "Welcome": users
-        }), 201)
+        if entered:
+
+            return make_response(jsonify({
+                "Welcome": users
+
+            }), 200)
+
+        return make_response('Could not verify!', 401)
