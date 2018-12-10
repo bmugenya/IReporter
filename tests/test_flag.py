@@ -13,12 +13,12 @@ class BaseCase(unittest.TestCase):
             "id": "flag_id",
             "createdOn": "created_on",
             "createdBy": "flag_id",
-            "type": "flag_type",
+            "incident": "flag_type",
             "location": "location",
             "status": "pending",
             "photo": "bribe.jpg",
             "video": "bribe.mp4",
-            "comments": "incident"
+            "comment": "incident"
 
         }
 
@@ -45,7 +45,7 @@ class BaseCase(unittest.TestCase):
         self.assertEqual(response.get_json()['message'], 'Successfully created red flag')
 
     def test_can_create_account(self):
-        response = self.client.post('/api/v1/user', json=self.user, content_type='application/json')
+        response = self.client.post('/api/v1/auth/register', json=self.user, content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
     def test_can_get_post(self):
@@ -54,13 +54,7 @@ class BaseCase(unittest.TestCase):
 
     def test_can_get_posts(self):
         response = self.client.get('/api/v1/record')
-        result = response.get_json()
-        self.assertEqual(0, len(result["data"]))
         self.assertEqual(response.status_code, 200)
-
-    def test_can_edit_post(self):
-        resp = self.client.patch('/api/v1/record/1')
-        self.assertEqual(resp.status_code, 200)
 
     def test_can_delete_post(self):
         resp = self.client.delete('/api/v1/record/1')
