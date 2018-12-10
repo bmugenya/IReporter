@@ -78,6 +78,21 @@ class UpdatePost(Resource, UpdateIncident):
         }), 200)
 
 
+class UpdateStatus(Resource, UpdateIncident):
+
+    def __init__(self):
+        self.incident = UpdateIncident()
+
+    def patch(self, flag_id):
+        data = request.get_json()
+        status = data["status"]
+        updated = self.incident.update_status(flag_id, status)
+
+        return make_response(jsonify({
+            "Reported Flags": updated
+        }), 200)
+
+
 class RemoveFlag(Resource, RemoveIncident):
     def __init__(self):
         self.incident = RemoveIncident()

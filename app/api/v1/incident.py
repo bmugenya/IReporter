@@ -80,6 +80,17 @@ class UpdateIncident():
         self.incident.commit()
         return post
 
+    def update_status(self, flag_id, status):
+        curr = self.incident.cursor()
+        post = {
+            "status": status,
+        }
+        query = "UPDATE Posts SET status= '%s' WHERE id = %s;" % (status, flag_id)
+        curr.execute(query, post)
+
+        self.incident.commit()
+        return post
+
 
 class RemoveIncident():
 

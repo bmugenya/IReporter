@@ -25,6 +25,7 @@ Method | Endpoint | Usage |
 |GET| `/api/v1/red-flag/<flag_id>` | Get one flag. |
 |PATCH| `/api/v1/red-flag/<flag_id>/location` | Update a flags location. |
 |PATCH| `/api/v1/red-flag/<flag_id>/comment` | Update a flags post. |
+|PATCH| `/api/v1/red-flag/<flag_id>/status` | Update a flags status. |
 |DELETE| `/api/v1/record/<flag_id>` | Delete a single flag. |
 
 
