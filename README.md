@@ -17,10 +17,10 @@ general public. Users can also report on things that needs government interventi
 ### End points
 Method | Endpoint | Usage |
 | ---- | ---- | --------------- |
-|POST| `/api/auth/register/admin` |  Create an admin. |
-|POST| `/api/auth/register/user` |  Create a user. |
-|POST| `/api/auth/login/admin` |  login an admin. |
-|POST| `/api/auth/login/user` |  login a user. |
+|POST| `/api/v1/auth/register/admin` |  Create an admin. |
+|POST| `/api/v1/auth/register/user` |  Create a user. |
+|POST| `/api/v1/auth/login/admin` |  login an admin. |
+|POST| `/api/v1/auth/login/user` |  login a user. |
 |POST| `/api/v1/red-flag` |  Create a flag. |
 |GET| `/api/v1/red-flags` | Get all flags.|
 |GET| `/api/v1/red-flag/<flag_id>` | Get one flag. |

@@ -5,7 +5,6 @@ from flask_restful import Resource
 from incident import *
 
 
-
 class RedFlags(Resource, PostIncidents):
 
     def __init__(self):
@@ -103,4 +102,3 @@ class RemoveFlag(Resource, RemoveIncident):
         return make_response(jsonify({
             "deleted": resp
         }), 200)
-

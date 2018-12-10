@@ -45,7 +45,7 @@ def tables():
         );"""
 
     db2 = """CREATE TABLE IF NOT EXISTS Posts (
-        post_id INTEGER,
+        id SERIAL,
         createdOn timestamp with time zone DEFAULT ('now'::text)::date NOT NULL,
         createdBy    SERIAL,
         post_type       VARCHAR(25)    NOT NULL,
@@ -54,7 +54,7 @@ def tables():
         photo    VARCHAR(25),
         video        VARCHAR(25),
         comments  VARCHAR(250) NOT NULL,
-        FOREIGN KEY (post_id) REFERENCES Users (id)
+        FOREIGN KEY (id) REFERENCES Users (id)
         );"""
 
     queries = [db1, db2]
