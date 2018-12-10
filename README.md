@@ -17,7 +17,6 @@ general public. Users can also report on things that needs government interventi
 ### End points
 Method | Endpoint | Usage |
 | ---- | ---- | --------------- |
-
 |POST| `/api/auth/register/admin` |  Create an admin. |
 |POST| `/api/auth/register/user` |  Create a user. |
 |POST| `/api/auth/login/admin` |  login an admin. |
