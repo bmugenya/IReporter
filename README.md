@@ -7,8 +7,8 @@ general public. Users can also report on things that needs government interventi
 
 ## Code Status
 
-[![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=develope)](https://travis-ci.com/bmugenya/IReporter)
-[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develop)](https://coveralls.io/github/bmugenya/IReporter?branch=develop)
+[![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=ft-token-authentication-162529793)](https://travis-ci.com/bmugenya/IReporter)
+[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develop)](https://coveralls.io/github/bmugenya/IReporter?branch=ft-token-authentication-162529793)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0e533517d5d3fe5dfa6f/maintainability)](https://codeclimate.com/github/bmugenya/IReporter/maintainability)
 
 
