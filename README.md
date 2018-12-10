@@ -8,22 +8,27 @@ general public. Users can also report on things that needs government interventi
 ## Code Status
 
 [![Build Status](https://travis-ci.com/bmugenya/IReporter.svg?branch=develope)](https://travis-ci.com/bmugenya/IReporter)
-[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develope)](https://coveralls.io/github/bmugenya/IReporter?branch=develope)
+[![Coverage Status](https://coveralls.io/repos/github/bmugenya/IReporter/badge.svg?branch=develop)](https://coveralls.io/github/bmugenya/IReporter?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0e533517d5d3fe5dfa6f/maintainability)](https://codeclimate.com/github/bmugenya/IReporter/maintainability)
+
 
 
 ### End points
 Method | Endpoint | Usage |
 | ---- | ---- | --------------- |
-|POST| `/api/v1/record` |  Create a flag. |
-|POST| `/api/auth/register/user` |  Create a user. |
 |POST| `/api/auth/register/admin` |  Create an admin. |
-|GET| `/api/v1/record` | Get all flags.|
-|GET| `/api/v1/record/<flag_id>` | Get one flag. |
-|PATCH| `/api/v1/record/<flag_id>` | Update a single flag. |
+|POST| `/api/auth/register/user` |  Create a user. |
+|POST| `/api/auth/login/admin` |  login an admin. |
+|POST| `/api/auth/login/user` |  login a user. |
+|POST| `/api/v1/red-flag` |  Create a flag. |
+|GET| `/api/v1/red-flags` | Get all flags.|
+|GET| `/api/v1/red-flag/<flag_id>` | Get one flag. |
+|PATCH| `/api/v1/red-flag/<flag_id>/location` | Update a flags location. |
+|PATCH| `/api/v1/red-flag/<flag_id>/comment` | Update a flags post. |
 |DELETE| `/api/v1/record/<flag_id>` | Delete a single flag. |
 
+
 ## Installation
-============
 
 Clone the Github repository and use pip to install the dependencies
 1. `$ git clone https://github.com/bmugenya/IReporter.git`
@@ -34,7 +39,4 @@ Clone the Github repository and use pip to install the dependencies
 
 ## License
 
-IReporter is releaset under the [MIT License](https://github.com/bmugenya/IReporter/blob/develop/LICENSE).
-
-
-
+IReporter is released under the [MIT License](https://github.com/bmugenya/IReporter/blob/develop/LICENSE).
