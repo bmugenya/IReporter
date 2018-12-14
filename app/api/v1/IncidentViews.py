@@ -19,7 +19,7 @@ class RedFlags(Resource, PostIncidents):
 
         return make_response(jsonify({
             "data": flags,
-            'message': 'Successfully created red flag'
+            'message': 'Success'
         }), 201)
 
 
@@ -32,7 +32,9 @@ class ViewFlags(Resource, ViewIncidents):
         flags = self.incident.get()
 
         return make_response(jsonify({
-            "data": flags
+            "data": flags,
+            'message': 'Success'
+
         }), 200)
 
 
@@ -44,7 +46,8 @@ class ViewFlag(Resource, ViewIncident):
     def get(self, flag_id):
         flag = self.incident.get_flag(flag_id)
         return make_response(jsonify({
-            "Reported Flags": flag
+            "data": flag,
+            'message': 'Success'
         }), 200)
 
 
@@ -59,7 +62,8 @@ class UpdateMap(Resource, UpdateIncident):
         updated = self.incident.update_map(flag_id, location)
 
         return make_response(jsonify({
-            "Reported Flags": updated
+            "data": updated,
+            'message': 'Success'
         }), 200)
 
 
@@ -74,7 +78,8 @@ class UpdatePost(Resource, UpdateIncident):
         updated = self.incident.update_post(flag_id, comment)
 
         return make_response(jsonify({
-            "Reported Flags": updated
+            "data": updated,
+            'message': 'Success'
         }), 200)
 
 
@@ -89,7 +94,8 @@ class UpdateStatus(Resource, UpdateIncident):
         updated = self.incident.update_status(flag_id, status)
 
         return make_response(jsonify({
-            "Reported Flags": updated
+            "data": updated,
+            'message': 'Success'
         }), 200)
 
 
@@ -100,5 +106,6 @@ class RemoveFlag(Resource, RemoveIncident):
     def delete(self, flag_id):
         resp = self.incident.remove_data(flag_id)
         return make_response(jsonify({
-            "deleted": resp
+            "deleted": resp,
+            'message': 'Success'
         }), 200)

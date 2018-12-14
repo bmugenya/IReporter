@@ -5,7 +5,6 @@ from flask_restful import Resource
 from users import *
 
 
-
 class AdminReg(Resource, AdminRegistration):
     def __init__(self):
         self.user = AdminRegistration()
@@ -20,10 +19,12 @@ class AdminReg(Resource, AdminRegistration):
         username = data["username"]
         password = data["password"]
 
-        users = self.user.save_admin(firstname, lastname, othernames, email, phoneNumber, username, password)
+        admin = self.user.save_admin(firstname, lastname, othernames, email, phoneNumber, username, password)
 
         return make_response(jsonify({
-            "Admin created": users
+            "Admin": admin,
+            'message': 'Success'
+
         }), 201)
 
 
@@ -44,7 +45,8 @@ class UserReg(Resource, UserRegistration):
         users = self.user.save_user(firstname, lastname, othernames, email, phoneNumber, username, password)
 
         return make_response(jsonify({
-            "User created": users
+            "User created": users,
+            'message': 'Success'
         }), 201)
 
 
@@ -57,16 +59,12 @@ class AdminAcces(Resource, AdminLogin):
         email = data["email"]
         password = data["password"]
         admin = self.user.login(email, password)
-        entered = bool(admin)
 
-        if entered:
+        return make_response(jsonify({
+            "Welcome": admin,
+            'message': 'Success'
 
-            return make_response(jsonify({
-                "Welcome": admin
-
-            }), 200)
-
-        return make_response('Could not verify!', 401)
+        }), 200)
 
 
 class UserAcces(Resource, UserLogin):
@@ -78,13 +76,9 @@ class UserAcces(Resource, UserLogin):
         email = data["email"]
         password = data["password"]
         users = self.user.login(email, password)
-        entered = bool(users)
 
-        if entered:
+        return make_response(jsonify({
+            "Welcome": users,
+            'message': 'Success'
 
-            return make_response(jsonify({
-                "Welcome": users
-
-            }), 200)
-
-        return make_response('Could not verify!', 401)
+        }), 200)
