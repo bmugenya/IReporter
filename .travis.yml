@@ -4,8 +4,9 @@ python:
 
 
 install:
-  - pip install -r requirements.txt
   - pip install flask_restful
+  - pip install -r requirements.txt
+  
 
 
 
