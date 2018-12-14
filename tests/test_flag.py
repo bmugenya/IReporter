@@ -1,5 +1,6 @@
 import unittest
 from app import create_app
+from app.db_con import database_setup
 
 
 class BaseCase(unittest.TestCase):
@@ -7,13 +8,16 @@ class BaseCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app()
         self.client = self.app.test_client()
+        self.dummy = database_setup()
+
+        self.dummy.create_tables()
 
         self.data = {
 
-            "id": "flag_id",
+            "id": 1,
             "createdOn": "created_on",
             "createdBy": "flag_id",
-            "incident": "flag_type",
+            "post_type": "flag_type",
             "location": "location",
             "status": "pending",
             "photo": "bribe.jpg",
@@ -23,7 +27,7 @@ class BaseCase(unittest.TestCase):
         }
 
         self.user = {
-            "id": "user_id",
+            "id": 1,
             "firstname": "firstname",
             "lastname": "lastname",
             "othernames": "othernames",
@@ -31,31 +35,31 @@ class BaseCase(unittest.TestCase):
             "phoneNumber": "phoneNumbe",
             "username": "username",
             "registered": "time",
-            "isAdmin": "False"
+            "isAdmin": "False",
+            "password": "password"
 
         }
 
     def tearDown(self):
-        del self.data
-        del self.user
+        self.dummy.destroy_tables()
 
     def test_can_create_post(self):
-        response = self.client.post('/api/v1/record', json=self.data, content_type='application/json')
+        response = self.client.post('/api/v1/red-flag', json=self.data, content_type='application/json')
         self.assertEqual(response.status_code, 201)
-        self.assertEqual(response.get_json()['message'], 'Successfully created red flag')
+        self.assertEqual(response.get_json()['message'], 'Success')
 
     def test_can_create_account(self):
-        response = self.client.post('/api/v1/auth/register', json=self.user, content_type='application/json')
+        response = self.client.post('/api/v1/auth/register/admin', json=self.user, content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
     def test_can_get_post(self):
-        response = self.client.get('/api/v1/record/1')
+        response = self.client.get('/api/v1/red-flag/1')
         self.assertEqual(response.status_code, 200)
 
     def test_can_get_posts(self):
-        response = self.client.get('/api/v1/record')
+        response = self.client.get('/api/v1/red-flags')
         self.assertEqual(response.status_code, 200)
 
     def test_can_delete_post(self):
-        resp = self.client.delete('/api/v1/record/1')
+        resp = self.client.delete('/api/v1/red-flag/1')
         self.assertEqual(resp.status_code, 200)
