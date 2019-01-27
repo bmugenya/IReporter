@@ -29,27 +29,15 @@ Method | Endpoint | Usage |
 |PATCH| `/api/v1/red-flag/<flag_id>/status` | Update a flags status. |
 |DELETE| `/api/v1/record/<flag_id>` | Delete a single flag. |
 
-## Installation
-
-Clone the Github repository and use pip to install the dependencies
-1. `$ git clone https://github.com/bmugenya/IReporter.git`
-1. `$ cd/IReporter`
-1. `$ source env/bin/activate`
-1. `$ pip install -r requirements.txt`
-
-
-## License
-
-IReporter is released under the [MIT License](https://github.com/bmugenya/IReporter/blob/develop/LICENSE).
 
 
 ## Installation
 
 Clone the Github repository and use pip to install the dependencies
 1. `$ git clone https://github.com/bmugenya/IReporter.git`
-1. `$ cd/IReporter`
-1. `$ source env/bin/activate`
-1. `$ pip install -r requirements.txt`
+2. `$ cd/IReporter`
+3. `$ source env/bin/activate`
+4. `$ pip install -r requirements.txt`
 
 
 ## License
